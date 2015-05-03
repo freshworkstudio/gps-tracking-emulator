@@ -1,0 +1,43 @@
+<template name="device">
+  <div class="device {{ connectionStatus }}">
+      <div class="pin img">
+        <i class="fa fa-car"></i>
+      </div>
+      <div class="pin delete">
+        <a class="delete-btn" data-device-id="{{ _id }}"><i class="fa fa-trash-o"></i></a>
+      </div>
+      <div class="info">
+        <div class="row">
+          <span class="col-md-6"><strong>IP:</strong>{{ ip }}</span>
+          <span class="col-md-6"><strong>Port:</strong>{{ port }}</span>
+          <span class="col-md-6"><strong>Model:</strong>{{ model }}</span>
+          <span class="col-md-6"><strong>UID:</strong>{{ uid }}</span>
+          <span class="col-md-6"><strong>Sync:</strong>Every {{ timeout }}ms</span>
+        </div>
+        <span class="status">{{lastStatus}}</span>
+        <div class="actions">
+      
+          <div class="btn-group" role="group">
+            {{#if equals connectionStatus "connected"}}
+              <button class="btn btn-default login">Login request</button>
+              <button class="btn btn-default ping">Ping</button>
+              <button class="btn btn-default alarm">Alarm</button>
+              <button class="btn btn-default startPings">Start pings</button>
+              <button class="btn btn-default pausePings">Pause pings</button>
+              <button class="btn btn-default sendCustom">Custom message</button>
+              <button class="btn btn-danger disconnect">Disconnect</button>
+            {{else}}
+              <button class="btn btn-primary connect">Connect</button>
+            {{/if}}
+          </div>
+
+        </div>  
+        <div class="log">
+          <a href="" class="show-log">Show/hide log ({{ logCount }})</a>
+          <ul style="display:none">
+            {{ #each statuses }}<li>{{this}}</li>{{/each}}
+          </ul>
+        </div>
+      </div>
+  </div>
+</template> 
