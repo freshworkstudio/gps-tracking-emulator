@@ -6,6 +6,7 @@ This [meteor](http://www.meteor.com) app let you emulate some gps tracking devic
 DEMO HERE: [gps-tracking-emulator.meteor.com](http://gps-tracking-emulator.meteor.com/)
 
 ### Installation
+Before you can run the app, you have to [install meteor](https://www.meteor.com/install).
 ``` bash
 cd /yout/projects/folder
 git clone https://github.com/freshworkstudio/gps-tracking-emulator
