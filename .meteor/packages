@@ -8,3 +8,16 @@ meteor-platform
 nemo64:bootstrap
 less
 reactjs:react
+accounts-base
+accounts-facebook
+accounts-github
+accounts-twitter
+ian:accounts-ui-bootstrap-3
+u2622:persistent-session
+fortawesome:fontawesome
+meteorhacks:npm
+
+
+npm-container
+kevohagan:sweetalert
+datariot:ganalytics

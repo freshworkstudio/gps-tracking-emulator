@@ -1,0 +1,14 @@
+<template name="home">
+	<div class="row" id="home">
+		<div class="col-md-4">			
+			{{ > device_form }}
+		</div>
+		<div class="col-md-8"><div class="row">
+			{{#each devices}}
+				<div class="col-md-12">
+					{{> device this }}
+				</div>
+			{{/each}}
+		</div></div>
+	</div>
+</template>

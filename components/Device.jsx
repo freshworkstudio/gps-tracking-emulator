@@ -1,4 +1,4 @@
-var MyComponent = ReactMeteor.createClass({
+var Device = ReactMeteor.createClass({
   templateName: "Device",
 
   startMeteorSubscriptions: function() {
@@ -24,9 +24,17 @@ var MyComponent = ReactMeteor.createClass({
   },
 
   render: function() {
-    return (<div></div>);
+    return (<div className="device">
+        <div className="img">
+
+        </div>
+        <div className="info">
+          <span><strong>IP:</strong> { this.state.ip }</span>
+          <span><strong>Port:</strong> { this.state.port }</span>
+        </div>
+    </div>);
   }
 
 });
 
-//export MyComponent;
+exports = Device;

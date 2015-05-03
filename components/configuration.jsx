@@ -28,19 +28,35 @@ var MyComponent = ReactMeteor.createClass({
   onChangeModel: function(e) {
     this.setState({model: e.target.value});
   },
+  handleSubmit:function(e){
+    e.preventDefault();
+
+    var ip = React.findDOMNode(this.refs.ip).value.trim();
+    var port = React.findDOMNode(this.refs.port).value.trim();
+    if (!ip || !port) {
+      return;
+    }
+
+    React.renderComponent(<Device />, document.body);
+
+    React.findDOMNode(this.refs.ip).value = '';
+    React.findDOMNode(this.refs.port).value = '';
+
+    if(this.props.onSubmit)this.props.onSubmit({ip: ip, port: port});
+  },
 
   render: function() {
     return (
-      <form className="form">
+      <form className="form" onSubmit={this.handleSubmit}>
         
         <div className="form-group">
           <label for="ip">IP</label>
-          <input type="text" className="form-control" value={this.state.ip} onChange={this.onChangeIP} placeholder="200.214.122.12" />
+          <input type="text" className="form-control" value={this.state.ip} onChange={this.onChangeIP} ref="ip" placeholder="200.214.122.12" />
         </div>
 
         <div className="form-group">
           <label for="port">PORT</label>
-          <input type="email" className="form-control" value={this.state.port} onChange={this.onChangePort}  id="port" placeholder="8090" />
+          <input type="text" className="form-control" value={this.state.port} onChange={this.onChangePort} ref="port" id="port" placeholder="8090" />
         </div>
 
         <div className="form-group">
